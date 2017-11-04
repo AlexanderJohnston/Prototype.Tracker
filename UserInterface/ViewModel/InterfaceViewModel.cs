@@ -2,8 +2,6 @@
 
 // UserInterface - InterfaceViewModel.cs
 // 
-// Copyright Untethered Labs, Inc.  All rights reserved.
-// 
 // Created: 2017-11-04 1:22 AM
 
 #endregion
