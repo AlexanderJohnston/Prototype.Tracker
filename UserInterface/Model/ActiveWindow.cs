@@ -75,7 +75,7 @@ namespace UserInterface.Model
         /// <summary>
         ///     Prepares the buffer and makes the call.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Name of the active window of focus.</returns>
         private string GetActiveWindowTitle ()
         {
             const int nChars = 256 ;
