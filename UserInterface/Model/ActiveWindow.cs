@@ -23,6 +23,7 @@ namespace UserInterface.Model
 {
     /// <summary>
     ///     This model retrieves the window currently under active focus.
+    ///     Property changed notification implemented via PostSharp.
     /// </summary>
     [NotifyPropertyChanged]
     public class ActiveWindow
