@@ -23,9 +23,15 @@ using PostSharp.Patterns.Model ;
 
 namespace UserInterface.Model
 {
+    /// <summary>
+    ///     This model retrieves the window currently under active focus.
+    /// </summary>
     [NotifyPropertyChanged]
     public class ActiveWindow
     {
+        /// <summary>
+        ///     Used to initiate the Windows API call on a loop to check for new window names.
+        /// </summary>
         private Timer stateTimer ;
 
         internal ActiveWindow ()
@@ -34,6 +40,10 @@ namespace UserInterface.Model
             stateTimer = new Timer (this.UpdateTimer, null, 0, 100) ;
         }
 
+        /// <summary>
+        ///     Initiates the call procedures.
+        /// </summary>
+        /// <param name="stateInfo"></param>
         private void UpdateTimer (Object stateInfo)
         {
             this.Text = this.GetActiveWindowTitle();
@@ -43,13 +53,27 @@ namespace UserInterface.Model
 
         #region Windows API Call
 
+        /// <summary>
+        ///     Stores the reference to the active window.
+        /// </summary>
+        /// <returns></returns>
         [DllImport ("user32.dll")]
         private static extern IntPtr GetForegroundWindow () ;
 
-
+        /// <summary>
+        ///     Makes the call to retrieve text from a window passed by reference.
+        /// </summary>
+        /// <param name="hWnd">Reference to the active window.</param>
+        /// <param name="text">String builder as buffer to receive text.</param>
+        /// <param name="count">Max number of chars to copy into the buffer.</param>
+        /// <returns></returns>
         [DllImport ("user32.dll")]
         private static extern int GetWindowText (IntPtr hWnd, StringBuilder text, int count) ;
 
+        /// <summary>
+        ///     Prepares the buffer and makes the call.
+        /// </summary>
+        /// <returns></returns>
         private string GetActiveWindowTitle ()
         {
             const int nChars = 256 ;
