@@ -1,9 +1,7 @@
 ﻿#region header
 
 // UserInterface - ActiveWindow.cs
-// 
-// Copyright Untethered Labs, Inc.  All rights reserved.
-// 
+//
 // Created: 2017-11-04 1:35 AM
 
 #endregion
