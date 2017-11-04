@@ -47,6 +47,9 @@ namespace UserInterface.Model
             this.Text = this.GetActiveWindowTitle();
         }
 
+        /// <summary>
+        ///     Stores the active window name for retrieval by a viewmodel.
+        /// </summary>
         public string Text { get ; set ; }
 
         #region Windows API Call
