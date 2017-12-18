@@ -11,6 +11,9 @@
         <viewModel:InterfaceViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBlock Text="{Binding Test}"/>
+        <StackPanel>
+            <TextBlock Name="winName" Text="{Binding Test}"/>
+            <TextBlock Name="procIdent" Text="{Binding ProcessIdentifier}"/>
+        </StackPanel>
     </Grid>
 </Window>

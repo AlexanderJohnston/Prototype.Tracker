@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using PostSharp.Patterns.Model ;
-
-
-namespace TaskManager
+namespace UserInterface.ViewModel
 {
-    [NotifyPropertyChanged]
-    public class Manager
+    class ManagerViewModel
     {
+
     }
 }

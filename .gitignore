@@ -205,7 +205,7 @@ ClientBin/
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
-*.pfx
+#*.pfx # just for this project so that I can upload the .snk as an example for interviewees.
 *.publishsettings
 orleans.codegen.cs
 

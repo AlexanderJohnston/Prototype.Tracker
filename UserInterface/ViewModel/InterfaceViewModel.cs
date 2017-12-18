@@ -23,6 +23,7 @@ namespace UserInterface.ViewModel
     /// <summary>
     ///     This contains logic for the user interface to communicate with the models.
     ///     May also contain viewmodels for interface components or sub-modules.
+    ///     Data binding implementation of INotifyPropertyChanged is injected after compile time.
     /// </summary>
     [NotifyPropertyChanged]
     public class InterfaceViewModel
@@ -33,6 +34,7 @@ namespace UserInterface.ViewModel
 
             this.actWinModel = new ActiveWindow();
 
+            //  Cast the type after compile-time when Postsharp injects the boilerplate.
             Post.Cast<ActiveWindow, INotifyPropertyChanged>
                 (this.actWinModel).PropertyChanged += this.RefreshActiveWindow;
 
@@ -46,6 +48,8 @@ namespace UserInterface.ViewModel
 
         public string Test { get ; set ; }
 
+        public string ProcessIdentifier { get ; set ; }
+
         /// <summary>
         ///     The active window model uses a Windows API call on a timer loop,
         ///     so it is necessary to use an event.
@@ -56,6 +60,8 @@ namespace UserInterface.ViewModel
         {
             if (e.PropertyName == "Text")
                 this.Test = this.actWinModel.Text ;
+            if (e.PropertyName == "ProcessIdentifier")
+                this.ProcessIdentifier = this.actWinModel.ProcessIdentifier.ToString() ;
         }
 
         /// <summary>
